@@ -1,5 +1,3 @@
-package com.example.genai
-
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -13,12 +11,15 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var editText: EditText
     private lateinit var generateButton: Button
     private lateinit var imageView: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         editText = findViewById(R.id.editText)
         generateButton = findViewById(R.id.generateButton)
         imageView = findViewById(R.id.imageView)
@@ -27,12 +28,14 @@ class MainActivity : AppCompatActivity() {
             generateImage()
         }
     }
+
     private fun generateImage() {
         val text = editText.text.toString()
         val bitmap = textToImage(text)
 
         imageView.setImageBitmap(bitmap)
     }
+
     private fun textToImage(text: String): Bitmap {
         // Define bitmap properties
         val width = 500
@@ -50,4 +53,6 @@ class MainActivity : AppCompatActivity() {
 
         return bitmap
     }
+
+    // Other necessary methods and UI setup can go here
 }
