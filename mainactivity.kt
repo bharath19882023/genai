@@ -1,10 +1,9 @@
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.Typeface
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -45,6 +44,11 @@ class MainActivity : AppCompatActivity() {
         // Create canvas and paint
         val canvas = Canvas(bitmap)
         val paint = Paint()
+
+        // Set custom curved font
+        val typeface = Typeface.createFromAsset(assets, "your_custom_font.ttf")
+        paint.typeface = typeface
+
         paint.color = Color.BLACK
         paint.textSize = 30f
 
@@ -53,6 +57,4 @@ class MainActivity : AppCompatActivity() {
 
         return bitmap
     }
-
-    // Other necessary methods and UI setup can go here
 }
